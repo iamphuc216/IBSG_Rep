@@ -25,11 +25,6 @@ public class Q1Activity extends AppCompatActivity{
 
     //instantiate user
     User nonRegUser;
-    //toast debugging declaration
-    int duration = Toast.LENGTH_SHORT;
-    Context context;
-    CharSequence text;
-    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -41,11 +36,6 @@ public class Q1Activity extends AppCompatActivity{
         noRadBtn = (RadioButton) findViewById(R.id.noRadBtn);
         backBtn = (Button) findViewById(R.id.backBtn);
 
-        //Toast
-        context = getApplicationContext();
-        text = "Hello, Toast work!!!";
-        toast = Toast.makeText(context, text, duration);
-        toast.show();
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,19 +48,18 @@ public class Q1Activity extends AppCompatActivity{
     }
     public void onRadioButtonClicked(View view)
     {
-        final Intent intent = new Intent(Q1Activity.this, Q2Activity.class);
         boolean checked = ((RadioButton) view).isChecked();
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.yesRadBtn:
                 if (checked)
                     nonRegUser.religion = "yes";
-                    startActivity(intent);
+                    startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     break;
             case R.id.noRadBtn:
                 if (checked)
                     nonRegUser.religion = "no";
-                    startActivity(intent);
+                    startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     // I have no religion
                     break;
         }

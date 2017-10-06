@@ -9,6 +9,11 @@ public class User {
     public String religion = "";
     public float knowledge = 0;
     public float interest = 0;
+    public String userType = "";
+    public String firstname = "";
+    public String lastname = "";
+    public String phone = "";
+    public String nationality = "";
     private User() {}
 
     public static User getInstance() {
