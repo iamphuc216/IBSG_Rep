@@ -39,11 +39,9 @@ public class Q3Activity extends AppCompatActivity{
         intrstRtBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-<<<<<<< HEAD
-                nonRegUser.interest = (int) intrstRtBar.getRating();
-=======
+
                 nonRegUserSurvey.interest = (int) intrstRtBar.getRating();
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
+
                 startActivity(new Intent(Q3Activity.this, CompleteActivity.class));
             }
         });

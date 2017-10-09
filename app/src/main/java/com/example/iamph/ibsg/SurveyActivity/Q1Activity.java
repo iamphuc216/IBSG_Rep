@@ -24,11 +24,9 @@ public class Q1Activity extends AppCompatActivity{
     private Button backBtn;
 
     //instantiate user
-<<<<<<< HEAD
-    User nonRegUser;
-=======
+
     Survey nonRegUserSurvey;
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,20 +55,17 @@ public class Q1Activity extends AppCompatActivity{
         switch(view.getId()) {
             case R.id.yesRadBtn:
                 if (checked)
-<<<<<<< HEAD
-                    nonRegUser.religion = "yes";
-=======
+
                     nonRegUserSurvey.religion = "yes";
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
+
                     startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     break;
             case R.id.noRadBtn:
                 if (checked)
-<<<<<<< HEAD
-                    nonRegUser.religion = "no";
-=======
+
+
                     nonRegUserSurvey.religion = "no";
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
+
                     startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     // I have no religion
                     break;

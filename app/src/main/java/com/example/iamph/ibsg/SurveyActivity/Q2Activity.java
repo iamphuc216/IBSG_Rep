@@ -22,19 +22,12 @@ public class Q2Activity extends AppCompatActivity{
     private RatingBar ratingBar;
     private Button backBtn;
 
-<<<<<<< HEAD
-    User nonRegUser;
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        nonRegUser = User.getInstance();
-=======
     Survey nonRegUserSurvey;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         nonRegUserSurvey = Survey.getInstance();
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_q2);
@@ -44,11 +37,8 @@ public class Q2Activity extends AppCompatActivity{
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b)
             {
-<<<<<<< HEAD
-                nonRegUser.knowledge = (int)ratingBar.getRating();
-=======
+
                 nonRegUserSurvey.knowledge = (int)ratingBar.getRating();
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
                 startActivity(new Intent(Q2Activity.this, Q3Activity.class));
             }
         });
