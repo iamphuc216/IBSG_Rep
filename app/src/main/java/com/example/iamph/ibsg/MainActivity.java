@@ -24,12 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
-        nonRegUser = User.getInstance();
+
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
-=======
+
         nonRegUserSurvey = Survey.getInstance();
->>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
 
 
 
