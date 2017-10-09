@@ -13,23 +13,23 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.iid.FirebaseInstanceId;
 
+
 public class MainActivity extends AppCompatActivity {
-    DatabaseReference databaseUser;
+    DatabaseReference mDatabase;
     private Button surveyBtn;
     private Button alrdyBtn;
-    User nonRegUser;
+    Survey nonRegUserSurvey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nonRegUser = User.getInstance();
-        databaseUser = FirebaseDatabase.getInstance().getReference("users");
+        nonRegUserSurvey = Survey.getInstance();
 
 
 
         surveyBtn = (Button) findViewById(R.id.surveyBtn);
-        alrdyBtn = (Button) findViewById(R.id.btnAlrdy);
+
         final Intent intent = new Intent(MainActivity.this, Q1Activity.class);
 
         surveyBtn.setOnClickListener(new View.OnClickListener() {
@@ -38,24 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        alrdyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addUserToFbase();
-            }
-        });
 
     }
 
 
-    void addUserToFbase()
-    {
-        String id = databaseUser.push().getKey();
-
-        // Write a message to the database
-        databaseUser.child(id).setValue(nonRegUser);
-
-    }
 
 
 

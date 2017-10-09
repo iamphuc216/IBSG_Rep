@@ -20,8 +20,8 @@
         <activity android:name=".SurveyActivity.Q1Activity"> </activity>
         <activity android:name=".SurveyActivity.Q2Activity"> </activity>
         <activity android:name=".SurveyActivity.Q3Activity"> </activity>
-
-
+        <activity android:name=".SurveyActivity.CompleteActivity"> </activity>
+        <activity android:name=".SurveyActivity.EnterDetailActivity"> </activity>
     </application>
 
 </manifest>

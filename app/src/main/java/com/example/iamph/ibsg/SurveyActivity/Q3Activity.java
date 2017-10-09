@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.iamph.ibsg.MainActivity;
 import com.example.iamph.ibsg.R;
-import com.example.iamph.ibsg.User;
+import com.example.iamph.ibsg.Survey;
 
 /**
  * Created by iamph on 20/09/2017.
@@ -19,7 +19,7 @@ public class Q3Activity extends AppCompatActivity{
 
     private RatingBar intrstRtBar;
 
-    User nonRegUser;
+    Survey nonRegUserSurvey;
     //toast debugging declaration
     int duration = Toast.LENGTH_SHORT;
     Context context;
@@ -31,19 +31,16 @@ public class Q3Activity extends AppCompatActivity{
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_q3);
-        nonRegUser = User.getInstance();
+        nonRegUserSurvey = Survey.getInstance();
 
 
         intrstRtBar = (RatingBar) findViewById(R.id.intrstRtBar);
-        context = getApplicationContext();
-        final Intent currIntent = getIntent();
 
         intrstRtBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            final Intent intent = new Intent(Q3Activity.this, MainActivity.class);
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                nonRegUser.interest = (int) intrstRtBar.getRating();
-                startActivity(intent);
+                nonRegUserSurvey.interest = (int) intrstRtBar.getRating();
+                startActivity(new Intent(Q3Activity.this, CompleteActivity.class));
             }
         });
 

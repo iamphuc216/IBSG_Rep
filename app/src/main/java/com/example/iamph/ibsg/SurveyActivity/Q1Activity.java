@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.iamph.ibsg.MainActivity;
 import com.example.iamph.ibsg.R;
-import com.example.iamph.ibsg.User;
+import com.example.iamph.ibsg.Survey;
 
 /**
  * Created by iamph on 20/09/2017.
@@ -24,28 +24,18 @@ public class Q1Activity extends AppCompatActivity{
     private Button backBtn;
 
     //instantiate user
-    User nonRegUser;
-    //toast debugging declaration
-    int duration = Toast.LENGTH_SHORT;
-    Context context;
-    CharSequence text;
-    Toast toast;
+    Survey nonRegUserSurvey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        nonRegUser = User.getInstance();
+        nonRegUserSurvey = Survey.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_q1);
         yesRadBtn = (RadioButton) findViewById(R.id.yesRadBtn);
         noRadBtn = (RadioButton) findViewById(R.id.noRadBtn);
         backBtn = (Button) findViewById(R.id.backBtn);
 
-        //Toast
-        context = getApplicationContext();
-        text = "Hello, Toast work!!!";
-        toast = Toast.makeText(context, text, duration);
-        toast.show();
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,19 +48,18 @@ public class Q1Activity extends AppCompatActivity{
     }
     public void onRadioButtonClicked(View view)
     {
-        final Intent intent = new Intent(Q1Activity.this, Q2Activity.class);
         boolean checked = ((RadioButton) view).isChecked();
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.yesRadBtn:
                 if (checked)
-                    nonRegUser.religion = "yes";
-                    startActivity(intent);
+                    nonRegUserSurvey.religion = "yes";
+                    startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     break;
             case R.id.noRadBtn:
                 if (checked)
-                    nonRegUser.religion = "no";
-                    startActivity(intent);
+                    nonRegUserSurvey.religion = "no";
+                    startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     // I have no religion
                     break;
         }
