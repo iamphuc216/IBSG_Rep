@@ -10,7 +10,11 @@ import android.widget.Toast;
 
 import com.example.iamph.ibsg.MainActivity;
 import com.example.iamph.ibsg.R;
+<<<<<<< HEAD
 import com.example.iamph.ibsg.User;
+=======
+import com.example.iamph.ibsg.Survey;
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,7 +35,11 @@ public class EnterDetailActivity extends AppCompatActivity{
     EditText phoneTxt;
     EditText nationTxt;
 
+<<<<<<< HEAD
     User nonRegUser;
+=======
+    Survey nonRegUserSurvey;
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -39,7 +47,11 @@ public class EnterDetailActivity extends AppCompatActivity{
         setContentView(R.layout.activity_userdetails);
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
 
+<<<<<<< HEAD
         nonRegUser = User.getInstance();
+=======
+        nonRegUserSurvey = Survey.getInstance();
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
         //Connect layout nodes to activity
         regBtn = (Button)findViewById(R.id.regBtn);
         cancelBtn = (Button)findViewById(R.id.cancelBtn);
@@ -58,11 +70,19 @@ public class EnterDetailActivity extends AppCompatActivity{
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 nonRegUser.firstname = firstnameTxt.getText().toString();
                 nonRegUser.lastname = lastnameTxt.getText().toString();
                 nonRegUser.phone = phoneTxt.getText().toString();
                 nonRegUser.nationality = nationTxt.getText().toString();
                 nonRegUser.userType = "member";
+=======
+                nonRegUserSurvey.firstname = firstnameTxt.getText().toString();
+                nonRegUserSurvey.lastname = lastnameTxt.getText().toString();
+                nonRegUserSurvey.phone = phoneTxt.getText().toString();
+                nonRegUserSurvey.nationality = nationTxt.getText().toString();
+                nonRegUserSurvey.userType = "member";
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
                 addUserToFbase();
                 startActivity(new Intent(EnterDetailActivity.this, MainActivity.class));
             }
@@ -72,9 +92,15 @@ public class EnterDetailActivity extends AppCompatActivity{
     void addUserToFbase()
     {
         String id = mDatabase.push().getKey();
+<<<<<<< HEAD
         //Toast.makeText(getApplicationContext(),nonRegUser.toString(),Toast.LENGTH_SHORT).show();
         // Write a message to the database
         mDatabase.child(id).setValue(nonRegUser);
+=======
+        //Toast.makeText(getApplicationContext(),nonRegUserSurvey.toString(),Toast.LENGTH_SHORT).show();
+        // Write a message to the database
+        mDatabase.child(id).setValue(nonRegUserSurvey);
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
 
     }
 }

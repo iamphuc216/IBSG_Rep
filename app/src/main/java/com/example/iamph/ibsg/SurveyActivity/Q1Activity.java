@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.iamph.ibsg.MainActivity;
 import com.example.iamph.ibsg.R;
-import com.example.iamph.ibsg.User;
+import com.example.iamph.ibsg.Survey;
 
 /**
  * Created by iamph on 20/09/2017.
@@ -24,12 +24,16 @@ public class Q1Activity extends AppCompatActivity{
     private Button backBtn;
 
     //instantiate user
+<<<<<<< HEAD
     User nonRegUser;
+=======
+    Survey nonRegUserSurvey;
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        nonRegUser = User.getInstance();
+        nonRegUserSurvey = Survey.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_q1);
         yesRadBtn = (RadioButton) findViewById(R.id.yesRadBtn);
@@ -53,12 +57,20 @@ public class Q1Activity extends AppCompatActivity{
         switch(view.getId()) {
             case R.id.yesRadBtn:
                 if (checked)
+<<<<<<< HEAD
                     nonRegUser.religion = "yes";
+=======
+                    nonRegUserSurvey.religion = "yes";
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
                     startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     break;
             case R.id.noRadBtn:
                 if (checked)
+<<<<<<< HEAD
                     nonRegUser.religion = "no";
+=======
+                    nonRegUserSurvey.religion = "no";
+>>>>>>> 9f38b8e818aebb5ea45fd45d6c719c2eea10c5ff
                     startActivity(new Intent(Q1Activity.this, Q2Activity.class));
                     // I have no religion
                     break;
